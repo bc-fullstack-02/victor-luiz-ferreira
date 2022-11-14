@@ -18,13 +18,27 @@ console.log('server listening on http://localhost:4000');
 
 //node ./exercicios-aulas/backend/server.js
 */
-
+const path = require('path');
+const fs = require('fs');
 const express = require('express');
-
+const { Router } = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Olá mundo')
+//app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res, next) => {
+    console.log('primeiro get');
+    next();
 });
 
-app.listen(3500)
+app.get('/', (req, res, next) => {
+    console.log('segundo get');
+    next();
+});
+//app.get('/', (req, res) => {
+   //console.log(req.headers);
+    //const content = fs.readFileSync(path.join(__dirname, 'static', 'index.html'), 'utf8');
+    //res.send(content);
+//});
+
+app.listen(3000) 
