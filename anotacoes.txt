@@ -12,7 +12,7 @@ docker run -d -p 8080:80 nginx
 
 docker run --name some-mongo -d mongo
 
-docker run --name some-postgres -e POSTGRES_PASSWORD=12345 -d postgres
+docker run -d -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres
 
 
 
