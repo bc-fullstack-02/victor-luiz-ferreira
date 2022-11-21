@@ -1,52 +1,11 @@
-/*
-const http = require('http');
-
-const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        console.log(req.headers)
-        res.write('hello from server')
-        res.end()
-    }
-});
-
-server.on('connection', (stream) => {
-    console.log('some one connected')
-});
-
-server.listen(4000);
-console.log('server listening on http://localhost:4000');
-
-//node ./exercicios-aulas/backend/server.js
-*/
-
-//app.use(express.static(path.join(__dirname, 'public')));
-/*
-app.get('/', (req, res, next) => {
-    console.log('primeiro get');
-    next();
-});
-app.get('/', (req, res, next) => {
-    console.log('segundo get');
-    next();
-});
-*/
-
-//app.get('/', (req, res) => {
-   //console.log(req.headers);
-    //const content = fs.readFileSync(path.join(__dirname, 'static', 'index.html'), 'utf8');
-    //res.send(content);
-//});
-
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
-//const bodyParser = require('body-parser');
 const app = express();
 const router = express.Router();
 const { Client } = require('pg');
 
 app.use(express.json());
-//app.use(bodyParser.json());
 
 let db = [
     {id: '04684059-776c-41ce-8c38-940830c0b651', title: 'hello1', body: 'hello1 world body blablabla', create_at: new Date(), update_at: new Date()},
@@ -133,3 +92,45 @@ router
 app.use(router);
 
 app.listen(3000) 
+
+/*
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        console.log(req.headers)
+        res.write('hello from server')
+        res.end()
+    }
+});
+
+server.on('connection', (stream) => {
+    console.log('some one connected')
+});
+
+server.listen(4000);
+console.log('server listening on http://localhost:4000');
+
+//node ./exercicios-aulas/backend/server.js
+*/
+
+//app.use(express.static(path.join(__dirname, 'public')));
+/*
+app.get('/', (req, res, next) => {
+    console.log('primeiro get');
+    next();
+});
+app.get('/', (req, res, next) => {
+    console.log('segundo get');
+    next();
+});
+*/
+
+//app.get('/', (req, res) => {
+   //console.log(req.headers);
+    //const content = fs.readFileSync(path.join(__dirname, 'static', 'index.html'), 'utf8');
+    //res.send(content);
+//});
+//const bodyParser = require('body-parser');
+//app.use(bodyParser.json());
+
