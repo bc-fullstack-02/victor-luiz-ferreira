@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose')
-const Redact = require('./redact')
 
 const postSchema = new Schema({
   title: {
@@ -9,13 +8,7 @@ const postSchema = new Schema({
   },
   description: {
     type: String,
-    required: [true, 'descricao obrigatoria'],
-    validate: { // bonus track
-      validator: (val) => Redact
-        .count({ term: val })
-        .then(count => count === 0),
-      message: 'nao pode usar a palavra {VALUE}'
-    }
+    required: [true, 'descricao obrigatoria']
   },
   comments: [{
     type: Schema.Types.ObjectId,
@@ -23,4 +16,6 @@ const postSchema = new Schema({
   }]
 }, { timestamps: true })
 
-module.exports = model('Post', postSchema)
+const Post = model('Post', postSchema)
+
+module.exports = Post

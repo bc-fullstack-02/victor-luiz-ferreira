@@ -3,7 +3,7 @@ const { Router } = require('express')
 const {
   PostController,
   CommentController
-} = require('../controllers')
+} = require('../controllers/postController')
 
 const postRoutes = Router()
 
