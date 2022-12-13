@@ -7,8 +7,8 @@ const cors = require('cors')
 // const esg = require('express-swagger-generator')
 
 const jwt = require('jsonwebtoken')
-const ACCESS_TOKEN_SECRET = 'token12345'
-
+const ACCESS_TOKEN_SECRET = '1234'
+// a2775ba65d5b9cc87c9b7976bd826974
 // const defaultOptions = require('./swagger.json')
 
 const { Post, Comment, User } = require('./routers')
@@ -41,7 +41,7 @@ app.use(logger(process.env.NODE_ENV || 'dev'))
 
 function authenticateToken (req, res, next) {
   const authHeader = req.headers.authorization
-  const token = authHeader && authHeader.split('  ')[1]
+  const token = authHeader && authHeader.split(' ')[1]
   if (token == null) return next(createError(401))
   jwt.verify(token, ACCESS_TOKEN_SECRET, (err, user) => {
     if (err) return next(createError(403))

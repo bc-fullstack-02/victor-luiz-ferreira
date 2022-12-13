@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const router = express.Router()
 const { User, Connection } = require('../models')
-const ACCESS_TOKEN_SECRET = 'token12345'
+const ACCESS_TOKEN_SECRET = '1234'
 
 router
   .route('/')
