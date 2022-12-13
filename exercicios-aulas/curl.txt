@@ -1,4 +1,0 @@
-curl -v -XPOST http://localhost:3000/posts/ -H 'Content-Type: application/json' -d '{"id": "04684059-776c-41ce-8c38-940830c0b655", "title": "hello5", "body": "hello1 world body blablabla", "create_at": "2022-11-19T00:50:18.181Z","update_at":"2022-11-19T00:50:18.181Z"}'
-curl -v -XPUT http://localhost:3000/posts/04684059-776c-41ce-8c38-940830c0b653 -H 'Content-Type: application/json' -d '{"id":"04684059-776c-41ce-8c38-940830c0b656","title":"hello6","body":"hello6 world body blablabla","create_at":"2022-11-19T01:16:16.152Z","update_at":"2022-11-19T01:16:16.152Z"}'
-curl -v -XDELETE http://localhost:3000/posts/04684059-776c-41ce-8c38-940830c0b652 
-
