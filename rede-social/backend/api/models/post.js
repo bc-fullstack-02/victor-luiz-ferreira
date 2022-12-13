@@ -1,21 +1,31 @@
 const { Schema, model } = require('mongoose')
 
+/**
+ * @typedef Post
+ * @property {string} _id
+ * @property {string} title.required - Some title for product
+ * @property {string} description.required - Some description for product
+ */
+
 const postSchema = new Schema({
   title: {
     type: String,
-    required: [true, 'titulo obrigatorio'],
-    minLength: [2, 'titulo no minimo 2']
+    required: true,
+    minLength: 2
   },
   description: {
     type: String,
-    required: [true, 'descricao obrigatoria']
+    required: true,
+    minLength: 2
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   },
   comments: [{
     type: Schema.Types.ObjectId,
     ref: 'Comment'
   }]
-}, { timestamps: true })
+})
 
-const Post = model('Post', postSchema)
-
-module.exports = Post
+module.exports = model('Post', postSchema)

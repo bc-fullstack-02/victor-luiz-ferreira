@@ -14,6 +14,6 @@ docker run --name some-mongo -d mongo
 
 docker run -d -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres
 
-
+sudo pip3 install docker-compose
 
 
