@@ -6,6 +6,7 @@ Project Backend - Victor Luiz Ferreira
 ![Express](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![Swagger](https://img.shields.io/badge/Swagger-83eb2?style=for-the-badge&logo=swagger&logoColor=black)
+
 ![MongoDB](https://img.shields.io/badge/MongoDB-183a43?style=for-the-badge&logo=mongodb&logoColor=green)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-aaafc4?style=for-the-badge&logo=rabbitmq&logoColor=orange)
 ![Docker](https://img.shields.io/badge/Docker-99a2a6?style=for-the-badge&logo=docker&logoColor=blue)
