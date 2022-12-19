@@ -59,7 +59,7 @@ npm start
 docker-compose up
 ```
 
-*Note* The Docker aplication is not working at the moment. Project in development, fixes and updates are required
+*Note*: The Docker aplication is not working at the moment. Project in development, fixes and updates are required
 
 # Executing the project
 
