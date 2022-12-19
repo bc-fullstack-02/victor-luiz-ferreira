@@ -16,6 +16,9 @@ Clone this repository:
 
 ```sh
 git clone https://github.com/bc-fullstack-02/victor-luiz-ferreira
+cd rede-social
+cd backend
+cd api
 ```
 
 On the project folder, install the dependencies:
@@ -35,13 +38,13 @@ npm i
 Set the database MongoDB configuration
 
 ```sh
-docker run --name mongodb -d -p 27017:27017 mongo:latest
+npm run mongo:start
 ```
 
 Set the RabbitMQ configuration
 
 ```sh
-docker run --rm -it -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+npm run rabbit:start
 ```
 
 And then you're ready to run this project locally:
@@ -49,6 +52,25 @@ And then you're ready to run this project locally:
 ```sh
 npm start
 ```
+
+# To run via docker
+
+```sh
+docker-compose up
+```
+
+*Note* The Docker aplication is not working at the moment. Project in development, fixes and updates are required
+
+# Executing the project
+
+1) Open the project on port http://localhost:4000/api-docs 
+
+2) On the Swagger web page go to /security/register and create a new User
+
+3) After creating a User go to /security/login to Login your user account, this will generate a token to authenticate and authorize the user
+
+4) You will see the api working
+
 
 # How to reach me
 
