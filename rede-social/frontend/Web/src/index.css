@@ -1,0 +1,4 @@
+/*Esses 3 são a base do css pro tailwind, td vz q for usar algum seletor css a base dele ta aki dentro*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
