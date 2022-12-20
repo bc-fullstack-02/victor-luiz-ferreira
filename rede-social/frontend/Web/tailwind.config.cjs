@@ -1,20 +1,31 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors')
-
 module.exports = {
-  
-  /*O ocnteudo q ele vai ler */
-  content: ["./src/**/*.{html,js,jsx,tsx}"],
-  /*Fazer rodar, minuto 48:50 Aula 4*/
+  content: ["./index.html",
+            "./src/**/*.{html,js,ts,tsx}"],
   theme: {
-    // colocar a fonte google
     fontFamily: {
-      sans:["inter", "sans-serif"],
+      sans: ['Inter', 'sans-serif']
     },
-    extend: {}
+    colors: {
+      transparent: "transparent",
+      black: "#0f0f0e",
+      white: "#ffffff",
+      primary: '#f77909',
+      primaryLight: '#fed32e',
+      primaryDark: '#f25802',
+      secondary: '#7b4200',
+      secondaryLight: '#fc8800',
+      secondaryDark: '#e76c1e',
+      textOnP: '#ffffff',
+      textOnS: "#000000",
+      error: '#B00020',
+      close: '#ef5350',
+      background: '#fafafa',
+      lineBg: "#E8E8E8",
+      hoverBg: '#F5F5F5'
+    },
+    extend: {
+    }
   },
   plugins: [],
 }
-
-/*https://tailwindcss.com/docs/installation/using-postcss ===> PRA INSTALAR*/
-/*Tailwind CSS IntelliSense ==> Extensão */

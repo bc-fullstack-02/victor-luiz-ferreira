@@ -1,32 +1,42 @@
-import {Login} from "./Pages/Login";
-import "./index.css";
 
-// Importar as rotas e explicação Aula 6 min 35:50 até 41
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { SingUp } from "./Pages/SingUp";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// Importar Home aula 7
-import { Home } from "./Pages/Home";
-
-//  essa função vai criar a rota e receber 1 array de objetos de 2 parametros
-const router = createBrowserRouter([
-  {
-    // Aki trokei de / ´pra login e ele não aceitou, não encotro a  rota então deixa / msm
-    path: "/",
-    element: <Login/>,
-  },
-  {
-    path: "/singup",
-    element: <SingUp/>,
-  },
-  {
-    path: "/home",
-    element: <Home/>,
-  },
-]);
+import Login from './Pages/Login';
+import SignUp from './Pages/SignUp';
+import Home from './Pages/Home';
+import ProfilePage from './Pages/ProfilePage';
+import './main.css'
+import Friends from './Pages/Friends';
 
 function App() {
-  return <RouterProvider router={router} />
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />
+    },
+    {
+      path: "/signup",
+      element: <SignUp />
+    },
+    {
+      path: "/home",
+      element: <Home />
+    }, 
+    {
+      path: "/profile",
+      element: <ProfilePage />
+    },
+    {
+      path: "/friends",
+      element: <Friends />
+    }
+
+  ]);
+
+  return (
+    <RouterProvider router={router} />
+  )
 }
 
-export default App;
+export default App
