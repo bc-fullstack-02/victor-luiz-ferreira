@@ -33,10 +33,10 @@ function PostItem({post, handleLike}: PostItemProps) {
             )}
         
             <div className="flex items-center gap-6 pl-2">
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 ml-8">
                     <div onClick={() => handleLike(post._id)}>
                         {post.likes.includes(profile) ? 
-                            <Heart size={28} weight="fill" className="hover:text-secondary text-secondary cursor-pointer hover:scale-150 ease-in " /> 
+                            <Heart size={28} weight="fill" className="hover:text-secondary text-secondary cursor-pointer hover:scale-150 ease-in" /> 
                             :
                             <Heart size={28}  className="hover:text-secondary  cursor-pointer hover:scale-150 ease-in " />
                         }

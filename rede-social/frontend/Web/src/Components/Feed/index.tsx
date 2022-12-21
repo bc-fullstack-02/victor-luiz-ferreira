@@ -14,12 +14,8 @@ interface FeedProps {
 
 function Feed({posts, handleLike}: FeedProps) {
     const user = localStorage.getItem('user')
-    const name = localStorage.getItem('name')
-   
-   
-
-   console.log(posts)
-    
+    {/*const name = localStorage.getItem('name')*/}
+       
     return (
         <div className="basis-5/6 overflow-y-auto scrool-smooth text-white">
             <header className="border-b mt-4">

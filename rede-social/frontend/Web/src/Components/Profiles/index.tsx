@@ -4,16 +4,18 @@ import { UserCircle } from "phosphor-react";
 import Heading from "../Heading";
 import Button from "../Button";
 import { getAuthHeader } from "../../services/auth";
+import Text from "../Text";
 
 interface Profile {
     _id: string;
     name: string;
+    following: string[];
     followers: string[];
 }
 
 function Profiles() {
     const user = localStorage.getItem('user')
-    const name = localStorage.getItem('name')
+    {/*const name = localStorage.getItem('name')*/}
     const profileId = localStorage.getItem('profile')
     const authHeader = getAuthHeader()
 
@@ -32,7 +34,6 @@ function Profiles() {
         getProfiles()
     }, [])
 
-    console.log(profiles)
 
     async function handleFollow(profileId: string) {
         try {
@@ -54,14 +55,15 @@ function Profiles() {
 
 
     return (
-        <div className="basis-5/6 overflow-y-auto scrool-smooth text-white">
-            <header className="px-5 py-3 border-b border-lineBg flex items-center ">
+        <div className="basis-5/6 overflow-y-auto scrool-smooth text-white my-4">
+            <Text size="lg" className="font-extrabold ml-5">Amigos</Text>
+            <header className="px-5 py-3 border-b border-lineBg flex items-centerk">
                 <UserCircle size={40} weight='light' fill="" />
-                <Heading size="xs" className="ml-2">{name}</Heading>
-                <Heading  className="ml-2 text-sm">{`@${user}`}</Heading>
+                <Heading size="xs" className="ml-2 flex flex-row items-center ">{user}</Heading>
+                {/*<Heading  className="ml-2 text-sm">{`@${user}`}</Heading>*/}
             </header>
             {profiles.map(profile => (
-                <section className=" flex flex-col gap-2 px-5 py-3 border-b text-white" key={profile._id}>
+                <section className=" flex flex-col gap-2 px-5 py-3 border-b" key={profile._id}>
                     <header className="flex items-center mr-2">
                         <UserCircle size={40} weight='light' fill="" />
                         <Heading size="xs" className="ml-2">{profile.name}</Heading>
@@ -81,7 +83,7 @@ function Profiles() {
                             </div>
                         : 
                             <div className="flex items-center gap-3">
-                                <button onClick={() => handleFollow(profile._id)} className="w-40  border-secondary bg-gradient-to-r from-secondaryLight via-secondary to-secondaryDark hover:bg-gradient-to-br py-2 rounded-xl font-semibold text-md  focus:ring-2 ring-secondary text-white">
+                                <button onClick={() => handleFollow(profile._id)} className="w-40  border-secondary bg-gradient-to-r from-secondaryLight via-secondary to-secondaryDark hover:bg-gradient-to-br py-2 rounded-xl font-semibold text-md  focus:ring-2 ring-secondary">
                                     Seguir
                                 </button>
 

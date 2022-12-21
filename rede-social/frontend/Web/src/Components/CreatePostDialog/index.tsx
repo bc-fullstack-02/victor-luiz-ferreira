@@ -19,7 +19,7 @@ function CreatePostDialog({ postCreated }: CreatePostDialogProps) {
 
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        const form = event.currentTarget as HTMLFormElement
+        const form = event.currentTarget 
 
         const data = new FormData()
         data.append('title', form.elements.title.value)

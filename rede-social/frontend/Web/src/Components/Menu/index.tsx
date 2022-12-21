@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { useState } from 'react';
-import { HouseSimple, User, UsersThree } from "phosphor-react"
+import { House, User, UsersThree } from "phosphor-react"
 import MenuItem from "../MenuItem"
 import Text from "../Text";
 import logo_menu from "../../assets/parrot_menu.svg"
@@ -29,8 +29,8 @@ function Menu(props: MenuProps) {
 
             <nav>
                 <ul>
-                    <MenuItem route='/home' menuTitle="Home">
-                        <HouseSimple size={32} weight="fill" />
+                    <MenuItem route='/home' menuTitle="Página Inicial">
+                        <House size={32} weight="fill" />
                     </MenuItem>
                     <MenuItem route='/profile' menuTitle="Perfil">
                         <User size={32} weight="fill"/>
