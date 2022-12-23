@@ -1,34 +1,22 @@
-const express = require('express')
-const router = express.Router()
-const {Post, Profile, Connection} = require('../models')
+const router = require('express').Router()
+const Post = require('../models/Post')
+const Profile = require('../models/Profile')
+const authMiddleware = require('../lib/auth')
 
-router
-  .route('/')
-  .all((req, res, next) => Promise.resolve()
-    .then(() => Connection.then())
-    .then(() => next())
-    .catch(err => next(err))
-  )
-/**
- * This function get posts
- * @route GET /feed?page={page}
- * @param {integer} page.query - current page.
- * @group Feed - api
- * @returns {Array.<Post>} 200 - An array of posts
- * @returns {Error} default - unexpected error
- * @security JWT
- */
-  .get((req, res, next) => Promise.resolve()
-    .then(() => Profile.findById(req.user.profile.id))
-    .then((profile) => Post
-      .find({profile: {$in: [...profile.following, req.user.profile._id]}})
-      .populate('profile')
-      .limit(10)
-      .skip((req.query.page || 0) * 10)
-      .sort({createdAt: 'desc'})
-    )
-    .then((data) => res.status(200).json(data))
-    .catch(err => next(err))
-  )
+router.use(authMiddleware)
+router.route('/')
+    .get(async (req, res) => {
+        try {
+            const currentProfile = await Profile.findById(req.user.profile._id);
+            const profilePosts = await Post.find({ profile: currentProfile._id }).populate('profile').populate({ path: 'comments' })
+            const friendPosts = await Promise.all(
+                currentProfile.following.map((friendId) => {
+                    return Post.find({ profile: friendId }).populate('profile').populate({ path: 'comments' })
+                }))
+            res.status(200).json((profilePosts.concat(...friendPosts)).sort(function (a, b) { return new Date(b.createAt) - new Date(a.createAt) }))
+        } catch (err) {
+            res.status(500).json(err)
+        }
+    })
 
 module.exports = router

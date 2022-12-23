@@ -1,31 +1,29 @@
-import { useNavigate } from "react-router-dom"
-import AuthForm, { Auth } from "../../Components/AuthForm"
-import api from "../../services/api"
+import { useNavigate } from "react-router-dom";
+import AuthForm, { Auth } from "../../components/AuthForm";
+import api from '../../services/api';
 
 function SignUp() {
     const navigate = useNavigate()
 
     async function handleRegister(auth: Auth) {
-        console.log(auth)
         try {
             await api.post('/security/register', auth)
-
-            return navigate("/")
-        } catch(err) {
-            console.log(err)
+            navigate('/')
+        } catch (err) {
+            alert('Erro na criação do usuário.')
         }
     }
 
     return (
-        <AuthForm 
-            formTitle="Faça o cadastro e comece a usar!"
-            submitFormButton="Cadastrar"
-            linkDescription="Já possui conta? Entre agora!"
+        <AuthForm
+            formTitle='Faça o cadastro e comece a usar!'
+            submitFormButtonText='Cadastrar'
             submitFormButtonAction={handleRegister}
-            routeName="/"
+            linkDescription='Já possui conta? Crie uma agora!'
+            routeName='/'
             showNameInput
         />
-    )
+    );
 }
 
-export default SignUp
+export default SignUp;

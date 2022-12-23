@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "parrot",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.1",
     "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-slot": "^1.0.1",
     "axios": "^1.2.1",
@@ -19,7 +22,8 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-router-dom": "^6.4.4",
-    "react-scripts": "^5.0.1"
+    "react-toastify": "^9.1.1",
+    "socket.io-client": "^4.5.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",

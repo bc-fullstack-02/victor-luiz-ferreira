@@ -1,8 +1,7 @@
-import Menu from "../../Components/Menu";
-import Profiles from "../../Components/Profiles";
+import Menu from '../../components/Menu'
+import Profiles from '../../components/Profiles'
 
 function Friends() {
-
     return (
         <div className="w-screen h-screen flex">
             <Menu />
@@ -11,4 +10,4 @@ function Friends() {
     )
 }
 
-export default Friends;
+export default Friends

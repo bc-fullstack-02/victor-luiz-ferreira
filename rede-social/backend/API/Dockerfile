@@ -4,7 +4,7 @@ COPY package*.json ./
 
 FROM base as dev
 
-ENV NODE_ENV development
+ENV NODE_ENV=development
 RUN npm install
-COPY . .
+COPY ./* ./
 CMD ["npm", "start"]

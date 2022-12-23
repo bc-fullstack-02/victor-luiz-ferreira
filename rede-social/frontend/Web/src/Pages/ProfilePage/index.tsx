@@ -1,14 +1,14 @@
-import Profile from "../../Components/Profile";
-import Menu from "../../Components/Menu";
+import Profile from "../../components/Profile"
+import Menu from "../../components/Menu"
 
 function ProfilePage() {
+
     return (
         <div className="w-screen h-screen flex">
             <Menu />
             <Profile />
-        </div>
-       
-    )
+        </div>)
+
 }
 
-export default ProfilePage;
+export default ProfilePage

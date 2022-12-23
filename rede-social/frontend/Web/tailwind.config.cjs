@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html",
-            "./src/**/*.{html,js,ts,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'sans-serif']
+      sans: ["Inter", "sans-serif"],
     },
     colors: {
       transparent: "transparent",
@@ -22,7 +24,8 @@ module.exports = {
       close: '#ef5350',
       background: '#fafafa',
       lineBg: "#E8E8E8",
-      hoverBg: '#F5F5F5'
+      hoverBg1: '#C8C8C8',
+      hoverBg2: '#9E9E9E'
     },
     extend: {
     }

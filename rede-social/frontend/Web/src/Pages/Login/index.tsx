@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
-import AuthForm, { Auth } from "../../Components/AuthForm"
-import api from "../../services/api"
+import AuthForm, { Auth } from '../../components/AuthForm'
+import api from '../../services/api'
 
 interface UserToken {
     profile: string
@@ -10,35 +10,31 @@ interface UserToken {
 
 function Login() {
     const navigate = useNavigate()
-
     async function handleLogin(auth: Auth) {
         try {
             const { data } = await api.post('/security/login', auth)
-
-            const decodedToken = (jwt_decode(data.accessToken)) as UserToken
-            localStorage.setItem('profile', decodedToken.profile._id)
-            localStorage.setItem('name', decodedToken.profile.name)
-            localStorage.setItem('user', decodedToken.user )
-            localStorage.setItem('accessToken', data.accessToken )
-
-            console.log(decodedToken)
-
+            //para preencher no local storage
+            const decodedToken = jwt_decode(data.accessToken) as UserToken
+            localStorage.setItem("profile", decodedToken.profile)
+            localStorage.setItem("user", decodedToken.user)
+            localStorage.setItem("accessToken", data.accessToken)
             return navigate("/home")
-        } catch(err) {
+        } catch (err) {
             console.error(err)
-            alert('erro')
+            alert("Ocorreu um erro no login")
         }
     }
 
     return (
-        <AuthForm 
-            formTitle="Faça login e comece a usar!"
-            submitFormButton="Entrar"
-            linkDescription="Não possui conta? Crie uma agora!"
+        <AuthForm
+            formTitle='Faça login e comece a usar!'
+            submitFormButtonText='Entrar'
             submitFormButtonAction={handleLogin}
-            routeName="/signup"
+            linkDescription='Não possui conta? Crie uma agora!'
+            routeName='signup'
         />
-    )
+    );
 }
 
-export default Login
+
+export default Login;
