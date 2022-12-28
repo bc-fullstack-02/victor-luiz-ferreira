@@ -26,5 +26,6 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontFamily: THEME.FONT_FAMILY.REGULAR,
         textDecorationLine: "underline",
+    
     },
 })

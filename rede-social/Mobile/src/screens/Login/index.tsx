@@ -1,15 +1,27 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { styles } from './styles'
 
-import { Heading } from '../../components/Heading'
-
+import api from '../../services/api'
+import { Auth, AuthForm } from '../../components/AuthForm'
 
 export function Login() {
+
+  async function handleLogin(auth: Auth){
+    try {
+      const response = await api.post('/security/login', auth)
+      console.log(response)
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return(
-    <View style={styles.container}>
-      <Heading title='Sysmap Parrot' subtitle='Faça login e começe a usar!'/>
-    </View>
+    <AuthForm 
+      formTitle='Faça login e começe a usar!'
+      submitFormButtonText='Entrar'
+      submitFormButtonAction={handleLogin}
+      linkDescription='Não possui conta? Crie uma agora!'
+      routeName=''
+    />
   )
 }
 
