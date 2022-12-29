@@ -11,6 +11,10 @@ export const THEME = {
         INPUT: "#7C7C8A",
 
         BUTTON: "#F77909",
+
+        ERROR: "red",
+
+        BORDER: "#7C7C8A",
     },
     FONT_FAMILY: {
         REGULAR: "Inter_400Regular",

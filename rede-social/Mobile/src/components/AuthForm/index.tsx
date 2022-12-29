@@ -13,11 +13,7 @@ import { styles } from './styles'
 
 import { THEME } from '../../theme'
 
-export interface Auth {
-    user: string;
-    name?: string;
-    password: string;
-}
+import { Auth } from '../../@types/auth'
 
 interface AuthFormProps {
     formTitle: string;

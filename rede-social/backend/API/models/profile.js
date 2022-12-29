@@ -11,8 +11,8 @@ const { Schema, model } = require('mongoose')
 const profileSchema = new Schema({
     name: {
         type: String,
-        required: true,
-        minLength: 2
+        // required: true,
+        // minLength: 2
     },
     user: {
         required: true,
