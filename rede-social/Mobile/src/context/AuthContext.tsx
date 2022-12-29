@@ -53,6 +53,7 @@ const Provider = ({ children }: { children: ReactElement }) => {
                 return {
                     ...state,
                     errorMessage: null,
+                    token: null,
                 }
             case 'add_error':
                 return {
@@ -119,6 +120,7 @@ const Provider = ({ children }: { children: ReactElement }) => {
     }
 
     const logout = async () => {
+        let token
         try {
             await SecureStore.deleteItemAsync("token")
             await SecureStore.deleteItemAsync("user")
@@ -127,6 +129,7 @@ const Provider = ({ children }: { children: ReactElement }) => {
 
             dispatch({
                 type: 'logout',
+                payload: { token }
             })
             
         } catch (err) {
