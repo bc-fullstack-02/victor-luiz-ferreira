@@ -19,7 +19,7 @@ router.route('/me')
 
     .get(async (req, res) => {
         try {
-            const user = await User.findById(req.user.id);
+            const user = await User.findById(req.user.id).populate("profile");
             const { password, ...other } = user._doc
             res.status(200).json(other)
         } catch (err) {
