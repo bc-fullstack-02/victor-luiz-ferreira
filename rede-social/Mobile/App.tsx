@@ -10,18 +10,20 @@ import { useFonts, Inter_400Regular, Inter_600SemiBold, Inter_700Bold, Inter_900
  from '@expo-google-fonts/inter';
 
 import { Provider as AuthProvider, Context as AuthContext } from './src/context/AuthContext'
+import { Provider as PostProvider } from './src/context/PostContext'
 
 import { Login } from './src/screens/Login';
 import { SignUp } from './src/screens/SignUp';
 import { Background } from './src/components/Background';
 import { Loading } from './src/components/Loading';
-import { Home } from './src/screens/Home';
 import { Profile } from './src/screens/Profile';
 import { Friends } from './src/screens/Friends';
+import { HomeNavigationScreen } from './src/screens/HomeNavigationScreen';
 
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { THEME } from './src/theme';
+import { navigationRef } from './RootNavigation';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -61,7 +63,7 @@ function App() {
           backgroundColor='transparent'
           translucent
         />  
-        <NavigationContainer theme={MyTheme}>
+        <NavigationContainer theme={MyTheme} ref={navigationRef}>
           {!token ? (
           <Stack.Navigator 
             screenOptions={{
@@ -76,7 +78,7 @@ function App() {
             screenOptions={({ route }) => ({
               tabBarIcon: ({ color, size }) => {
                 switch (route.name) {
-                  case 'Home':
+                  case 'HomeNavigationScreen':
                     return (<House size={size} color={color} />)
                   case 'Friends':
                     return (<UsersThree size={size} color={color} />)
@@ -96,7 +98,7 @@ function App() {
               /*statusBarStyle: "dark"*/
           })}
           >
-            <Tab.Screen name='Home' component={Home} />
+            <Tab.Screen name='HomeNavigationScreen' component={HomeNavigationScreen} />
             <Tab.Screen name='Friends' component={Friends} />
             <Tab.Screen name='Profile' component={Profile} />
           </Tab.Navigator>
@@ -113,7 +115,9 @@ function App() {
 export default () => {
   return (
     <AuthProvider>
-      <App />
+      <PostProvider>
+        <App />
+      </PostProvider>
     </AuthProvider>
   );
 }

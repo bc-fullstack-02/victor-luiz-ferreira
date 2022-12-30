@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 12,
-        marginTop: 20,
     },
     heading: {
         alignItems: 'center',
@@ -20,8 +19,5 @@ export const styles = StyleSheet.create({
         fontFamily: THEME.FONT_FAMILY.BOLD,
         fontSize: THEME.FONT_SIZE.MD,
         marginStart: 12,
-    },
-    content: {
-        flex: 1
     },
 })
