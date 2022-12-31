@@ -36,7 +36,12 @@ export function PostItem({ post }: PostItemProps) {
                 </View>
                 <Spacer>
                     <View style={styles.contentBody}>
-                        <Text style={styles.contentText}>
+                        <Text style={styles.contentTextTitle}>
+                            {post.title}
+                        </Text>
+                    </View>
+                    <View style={styles.contentBody}>
+                        <Text style={styles.contentTextDescription}>
                             {post.description}
                         </Text>
                     </View>
@@ -47,7 +52,7 @@ export function PostItem({ post }: PostItemProps) {
                         ></Image>
                     ) : (
                         <View style={styles.contentBody}>
-                            <Text style={styles.contentText}>
+                            <Text style={styles.contentTextDescription}>
                                 {post.imageUrl}
                             </Text>
                         </View>

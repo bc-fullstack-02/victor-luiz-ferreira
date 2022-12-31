@@ -26,6 +26,7 @@ export function CreatePost() {
                 <Text style={styles.userNameText}>{user}</Text>
                 <View style={{ flex: 1 }}></View>
             </View>
+            <Spacer />
             <Spacer>
                 <Input.Root>
                     <Input.Input

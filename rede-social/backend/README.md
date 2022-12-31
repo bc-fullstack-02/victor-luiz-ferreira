@@ -56,10 +56,10 @@ npm start
 # To run via docker
 
 ```sh
-docker-compose up
+docker-compose up -d
 ```
 
-*Note*: The Docker aplication is not working at the moment. Project in development, fixes and updates are required
+*Note*: If the minio/mc not starts, or starts and then stops, try to restart only him, this should work.
 
 # Executing the project
 

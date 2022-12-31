@@ -4,7 +4,7 @@ import { THEME } from "../../theme"
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 24,
+        padding:6,
     },
     heading: {
         flexDirection: 'row',
