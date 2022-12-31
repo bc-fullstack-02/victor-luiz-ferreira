@@ -8,7 +8,7 @@ This is a bootcamp project from company [SysMap Solutions](https://www.linkedin.
 
 # Modules 
 
-ALL PROJECT - [social-network](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network) 
+[ALL PROJECT - SOCIAL NETWORK](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network) 
 
 -> [Backend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Backend) - [API](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Backend/API)
 
