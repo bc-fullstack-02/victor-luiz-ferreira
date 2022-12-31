@@ -1,17 +1,19 @@
-import React from 'react'
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
 import { Home } from '../Home'
-import { CreatePost } from '../CreatePost'
+import { CreatePost } from '../CreatePost';
 
 const Stack = createNativeStackNavigator()
-export function HomeNavigationScreen() {
-  return(
-      <Stack.Navigator screenOptions={{
-        headerShown: false
-      }}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="CreatePost" component={CreatePost} />
-      </Stack.Navigator>   
-  )
-}
 
+export function HomeNavigationScreen() {
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false,
+            }}>
+            <Stack.Screen name='Home' component={Home} />
+            <Stack.Screen name='CreatePost' component={CreatePost} />
+        </Stack.Navigator>
+    )
+}

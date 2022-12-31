@@ -6,19 +6,19 @@ import api from '../services/api'
 import { Auth, UserToken } from '../@types/auth'
 import { Action } from '../@types/reducer'
 
-interface IAuthcontext {
-    token: string | null,
-    user: string | null,
-    profile: string | null,
-    isLoading: boolean,
-    errorMessage: string | null,
-    login?: () => void,
-    register?: () => void,
-    tryLocalLogin?: () => void,
-    logout?: () => void,
+interface IAuthContext {
+    token: string | null
+    user: string | null
+    profile: string | null
+    isLoading: boolean
+    errorMessage: string | null
+    login?: () => void
+    register?: () => void
+    tryLocalLogin?: () => void
+    logout?: () => void
 }
 
-const defaultValue = { 
+const defaultValue = {
     token: null,
     user: null,
     profile: null,
@@ -26,9 +26,9 @@ const defaultValue = {
     errorMessage: null,
 }
 
-const Context = React.createContext<IAuthcontext>(defaultValue)
+const Context = React.createContext<IAuthContext>(defaultValue)
 
-const Provider = ({ children }: { children: ReactElement }) => {
+const Provider = ({ children }: { children: ReactNode }) => {
     const reducer = (state: any, action: Action) => {
         //action: { type: string, payload: any}
         switch (action.type) {
@@ -37,29 +37,13 @@ const Provider = ({ children }: { children: ReactElement }) => {
                     ...state,
                     ...action.payload,
                     errorMessage: null,
-                    isLoading: false,
-                }
+                };
             case 'user_created':
-                return {
-                   token: null,
-                   profile: null,
-                   user: null,
-                   ...state,
-                   ...action.payload,
-                   errorMessage: null,
-                   isLoading: false
-                }
+                return { ...state, errorMessage: null }
             case 'logout':
-                return {
-                    ...state,
-                    errorMessage: null,
-                    token: null,
-                }
+                return { token: null, profile: null, user: null, errorMessage: null }
             case 'add_error':
-                return {
-                   ...state,
-                   errorMessage: action.payload
-                }
+                return { ...state, errorMessage: action.payload }
             default:
                 return state
         }
@@ -72,20 +56,20 @@ const Provider = ({ children }: { children: ReactElement }) => {
             const response = await api.post('/security/login', { user, password })
             const { accessToken } = response.data
             const { profile, user: userName } = jwtDecode(accessToken) as UserToken
-            
-            await SecureStore.setItemAsync("token", accessToken)
-            await SecureStore.setItemAsync("user", userName)
-            await SecureStore.setItemAsync("profile", profile)
+
+            await SecureStore.setItemAsync('token', accessToken)
+            await SecureStore.setItemAsync('user', userName)
+            await SecureStore.setItemAsync('profile', profile)
 
             dispatch({
-                type: "login",
+                type: 'login',
                 payload: { token: accessToken, profile, user: userName },
             })
-        } catch (err) { 
-            console.error(err)
+        } catch (error) {
+            console.error(error)
             dispatch({
-                type: 'add_error', 
-                payload: 'Houve um erro no login.'
+                type: 'add_error',
+                payload: 'Houve um erro no login.',
             })
         }
     }
@@ -94,46 +78,42 @@ const Provider = ({ children }: { children: ReactElement }) => {
         try {
             await api.post('/security/register', { user, password })
 
-
             dispatch({
                 type: 'user_created',
             })
-        } catch (err) {
-            console.error(err)
+        } catch (error) {
+            console.error(error)
             dispatch({
                 type: 'add_error',
-                payload: 'Houve um erro no cadastro.'
+                payload: 'Houve um erro no cadastro.',
             })
         }
     }
 
     const tryLocalLogin = async () => {
-        let token, user, profile;
+        let token, user, profile
         try {
-            token = await SecureStore.getItemAsync("token")
-            user = await SecureStore.getItemAsync("user")
-            profile = await SecureStore.getItemAsync("profile")
-          dispatch({ type: 'login', payload: { token, profile, user } })  
-        } catch (err) {
-            console.error(err)
+            token = await SecureStore.getItemAsync('token')
+            user = await SecureStore.getItemAsync('user')
+            profile = await SecureStore.getItemAsync('profile')
+
+            dispatch({ type: 'login', payload: { token, profile, user } })
+        } catch (error) {
+            console.error(error)
         }
     }
 
     const logout = async () => {
-        let token
         try {
-            await SecureStore.deleteItemAsync("token")
-            await SecureStore.deleteItemAsync("user")
-            await SecureStore.deleteItemAsync("profile")
-            
+            await SecureStore.deleteItemAsync('token')
+            await SecureStore.deleteItemAsync('user')
+            await SecureStore.deleteItemAsync('profile')
 
             dispatch({
                 type: 'logout',
-                payload: { token }
             })
-            
-        } catch (err) {
-            console.error(err)
+        } catch (error) {
+            console.error(error)
         }
     }
 

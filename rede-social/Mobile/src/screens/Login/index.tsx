@@ -1,41 +1,39 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { Text, TouchableOpacity } from 'react-native'
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-import { Context as AuthContext } from '../../context/AuthContext'
-import api from '../../services/api'
-import { Auth, AuthForm } from '../../components/AuthForm'
+import { Context as AuthContext } from '../../context/AuthContext';
+
+import { AuthForm } from '../../components/AuthForm';
 import { styles } from './styles'
-import { Spacer } from '../../components/Spacer'
-
+import { Spacer } from '../../components/Spacer';
 interface LoginProps {
-  navigation: NativeStackNavigationProp<any, any>
+    navigation: NativeStackNavigationProp<any, any>
 }
 
 export function Login({ navigation }: LoginProps) {
-  const { login, errorMessage } = useContext(AuthContext)
+    const { login, errorMessage } = useContext(AuthContext)
 
-  function handleRegisterClick() {
-    navigation.navigate("SignUp")
-  }
+    function handleRegisterClick() {
+        navigation.navigate('SignUp')
+    }
 
-  return(
-    <>
-      <AuthForm 
-        formTitle='Faça login e começe a usar!'
-        submitFormButtonText='Entrar'
-        submitFormButtonAction={login}
+    return (
+        <>
+            <AuthForm
+                formTitle='Faça login e comece a usar!'
+                submitFormButtonText='Entrar'
+                submitFormButtonAction={login}
+            />
+            <TouchableOpacity onPress={handleRegisterClick}>
+                <Text style={styles.link}>Não possui conta? Cria uma agora!</Text>
+            </TouchableOpacity>
+            {errorMessage && (
+                <Spacer>
+                    <Text style={styles.errorMessage}>{errorMessage}</Text>
+                </Spacer>
+            )}
+        </>
 
-      />
-      <TouchableOpacity onPress={handleRegisterClick}>
-        <Text style={styles.link}>Não possui conta? Crie uma agora!</Text>
-      </TouchableOpacity>
-      {errorMessage &&(
-        <Spacer>
-          <Text style={styles.errorMessage}>{errorMessage}</Text>
-        </Spacer>
-      )}
-    </>
-  )
+    )
 }
-

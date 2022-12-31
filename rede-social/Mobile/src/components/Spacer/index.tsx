@@ -1,13 +1,16 @@
-import React, { ReactNode } from 'react'
-import { View } from 'react-native'
-import { styles } from './styles'
+import React, { ReactNode } from 'react';
+import { View } from 'react-native';
+
+import { styles } from './styles';
 
 interface SpacerProps {
-    children?: ReactNode
+    children?: ReactNode;
 }
 
 export function Spacer(props: SpacerProps) {
     return (
-        <View style={styles.container}>{props.children}</View>
+        <View style={styles.container}>
+            {props?.children}
+        </View>
     )
 }

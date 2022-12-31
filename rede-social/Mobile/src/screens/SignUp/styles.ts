@@ -1,13 +1,12 @@
 import { StyleSheet } from 'react-native'
-import { THEME } from '../../theme'
+import { THEME } from "../../theme"
 
 export const styles = StyleSheet.create({
     link: {
-        color: THEME.COLORS.CAPTION_500,
+        color: THEME.COLORS.CAPTION_400,
         fontSize: THEME.FONT_SIZE.SM,
-        textAlign: 'center',
+        textAlign: "center",
         fontFamily: THEME.FONT_FAMILY.REGULAR,
-        textDecorationLine: "underline",
-    
-    },
+        textDecorationLine: "underline"
+    }
 })

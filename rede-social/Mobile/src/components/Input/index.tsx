@@ -1,25 +1,20 @@
-import React, { ReactNode } from 'react'
-import { View, TextInput, TextInputProps } from 'react-native'
-import { styles } from './styles'
+import React, { ReactNode } from 'react';
+import { TextInput, TextInputProps, View } from 'react-native';
+
+import { styles } from './styles';
 
 interface TextInputRootProps {
     children: ReactNode
 }
 
 function TextInputRoot({ children }: TextInputRootProps) {
-  return(
-    <View style={styles.container}>{children}</View>
-  )
+    return <View style={styles.container}>{children}</View>
 }
 
-interface TextInputInputProps extends TextInputProps {
-
-}
+interface TextInputInputProps extends TextInputProps { }
 
 function TextInputInput(props: TextInputInputProps) {
-    return (
-        <TextInput style={styles.input} {...props}></TextInput>
-    )
+    return <TextInput style={styles.input} {...props}></TextInput>
 }
 
 interface TextInputIconProps {
