@@ -1,7 +1,4 @@
-# Fullstack Project SysMap - Social Network Parrot 
-
-
-.                     ![Passaro](https://github.com/bc-fullstack-02/victor-luiz-ferreira/blob/main/exercicios-aulas/logoImagem/logo.png)
+# Fullstack Project SysMap - Social Network Parrot ![Passaro](https://github.com/bc-fullstack-02/victor-luiz-ferreira/blob/main/exercicios-aulas/logoImagem/logo.png)
 
 
 
