@@ -10,10 +10,10 @@ This is a bootcamp project from company [SysMap Solutions](https://www.linkedin.
 
 [ALL PROJECT - SOCIAL NETWORK](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network) 
 
--> [Backend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Backend) - [API](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Backend/API)
+-> [Backend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Backend) - [API](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Backend/API) <-
 
--> [Frontend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Frontend) - [WEB](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Frontend/web)
+-> [Frontend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Frontend) - [WEB](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Frontend/web) <-
 
--> [Mobile](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Mobile)
+-> [Mobile](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Mobile) <-
 
 *Status: Developing* 
