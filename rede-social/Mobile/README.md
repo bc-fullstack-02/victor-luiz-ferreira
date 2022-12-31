@@ -31,7 +31,7 @@ npm i
 
 # Seting this project
 
-*NOTE*: You need to start and run the ![Backend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/rede-social/backend) first!
+*NOTE*: You need to start and run the [Backend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/rede-social/backend) first!
 
 
 After the backend is fully functional, then set the baseUrl of your configuration
