@@ -8,7 +8,7 @@ ALL PROJECT - [social-network](https://github.com/bc-fullstack-02/victor-luiz-fe
 
 -> [Backend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Backend) - [API](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Backend/API)
 
--> [Frontend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Frontend) - [WEB](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Frontend/Web)
+-> [Frontend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Frontend) - [WEB](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Frontend/web)
 
 -> [Mobile](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Mobile)
 
