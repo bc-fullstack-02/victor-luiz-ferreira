@@ -12,5 +12,4 @@ ALL PROJECT - [social-network](https://github.com/bc-fullstack-02/victor-luiz-fe
 
 -> [Mobile](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Mobile)
 
-```
 *Status: Developing*
