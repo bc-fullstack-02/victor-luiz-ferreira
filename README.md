@@ -4,12 +4,12 @@ This is a bootcamp project from company [SysMap Solutions](https://www.linkedin.
 
 # Modules 
 
-ALL PROJECT - [social-network](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/rede-social) 
+ALL PROJECT - [social-network](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network) 
 
--> [Backend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/rede-social/backend) - [API](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/rede-social/backend/API)
+-> [Backend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/backend) - [API](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/backend/API)
 
--> [Frontend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/rede-social/frontend) - [WEB](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/rede-social/frontend/Web)
+-> [Frontend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/frontend) - [WEB](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/frontend/Web)
 
--> [Mobile](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/rede-social/Mobile)
+-> [Mobile](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/social-network/Mobile)
 
 ˜Status: Developing˜
