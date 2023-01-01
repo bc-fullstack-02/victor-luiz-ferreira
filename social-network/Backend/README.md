@@ -10,7 +10,7 @@ Project Backend - Victor Luiz Ferreira
 ![MongoDB](https://img.shields.io/badge/MongoDB-183a43?style=for-the-badge&logo=mongodb&logoColor=green)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-aaafc4?style=for-the-badge&logo=rabbitmq&logoColor=orange)
 ![Docker](https://img.shields.io/badge/Docker-99a2a6?style=for-the-badge&logo=docker&logoColor=blue)
-# Running this project locally
+# Seting this project
 
 Clone this repository:
 
@@ -33,7 +33,7 @@ or
 npm i
 ```
 
-# Seting this project locally
+# Running this project locally
 
 Set the database MongoDB configuration
 
