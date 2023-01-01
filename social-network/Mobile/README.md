@@ -28,6 +28,18 @@ or
 npm i
 ```
 
+Install Expo
+
+```sh
+npm install expo
+```
+
+or 
+
+```sh
+npm i expo
+```
+
 # Running this project
 
 *NOTE*: You need to start and run the [Backend](https://github.com/bc-fullstack-02/victor-luiz-ferreira/tree/main/rede-social/backend) first!
